@@ -1,0 +1,21 @@
+body {
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  display: grid;
+  grid-template-rows: 56px 1fr 50px;
+  min-height: 100vh;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.footer {
+  padding: 1em;
+  background-color: #f8f8f8;
+}
+
+.copy {
+  margin: 0;
+  text-align: center;
+}

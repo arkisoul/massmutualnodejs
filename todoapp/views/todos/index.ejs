@@ -1,0 +1,19 @@
+<%- include("../includes/head") %>
+<body>
+  <%- include("../includes/header") %>
+    <main class="main">
+      <div class="container-fluid">
+        <section class="todos-page">
+          <h1>Todos</h1>
+          <ol class="todos-list">
+            <% todos.forEach(function(todo, index) { %>
+              <li class="todos-item"><%= todo.todo %></li>
+            <% })%>
+          </ol>
+          <a href="/todos/add">Add Todo</a>
+        </section>
+      </div>
+    </main>
+    <%- include("../includes/footer") %>
+  </body>
+</html>

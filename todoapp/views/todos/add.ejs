@@ -1,0 +1,22 @@
+<%- include("../includes/head") %>
+<body>
+  <%- include("../includes/header") %>
+    <main class="main">
+      <div class="container-fluid">
+        <section class="todos-page">
+          <h1>Add Todo</h1>
+          <form action="/todos" method="post">
+            <div class="form-group">
+              <label for="add-todo">What you want to do?</label>
+              <input type="text" class="form-control" id="add-todo" name="todo" placeholder="Todo name">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+    <%- include("../includes/footer") %>
+  </body>
+</html>

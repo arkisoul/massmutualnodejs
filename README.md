@@ -19,3 +19,11 @@ I/O
 ### Nodejs core 
 1. V8 Engine
 2. Libuv (c++)
+
+## Connecting to Mongodb
+- Native Driver
+- ORM/ODM
+  - Mongoose (ODM) -> Schema
+  - TypeORM
+  - Sequilize
+  - Prisma

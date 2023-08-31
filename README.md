@@ -5,9 +5,9 @@
 - PHP -> Apache | Nginx
 
 ### BE application related operations
-[x] Database operations
-[x] file operations
-[x] network operations,
+- [x] Database operations
+- [x] file operations
+- [x] network operations,
 
 ### Sync and Async operations
 I/O

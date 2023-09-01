@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('todoapp:server');
 var http = require('http');
+const { Server } = require('socket.io');
 
 /**
  * Get port from environment and store in Express.
@@ -20,7 +21,23 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+const io = new Server(server);
 
+io.on('connection', (socket) => {
+  console.log('Socket connection successfully');
+
+  socket.on('chat message', (data) => {
+    console.log('chat message received', data);
+
+    // socket.broadcast.emit('chat message', data); // broadcast msg to rest of the connected clients
+    // socket.emit('chat message', data); // emit msg to the client from where the msg originated
+    io.emit('chat message', data) // broadcast msg to all the connected clients
+  })
+
+  socket.on('disconnect', (reason) => {
+    console.info('Socket connection disconnected');
+  })
+})
 /**
  * Listen on provided port, on all network interfaces.
  */

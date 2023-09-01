@@ -21,9 +21,14 @@ const updateTodo = async (todoId, todo) => {
   return await TodoModel.findByIdAndUpdate(todoId, { todo: todo }, { new: true })
 }
 
+const deleteTodo = async (todoId) => {
+  return await TodoModel.findByIdAndRemove(todoId);
+}
+
 module.exports = {
   getAll,
   getTodoById,
   createTodo,
   updateTodo,
+  deleteTodo,
 }

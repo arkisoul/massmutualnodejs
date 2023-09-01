@@ -18,6 +18,10 @@ router.get('/about', (req, res, next) => {
   res.render('about');
 })
 
+router.get('/chat', (req, res, next) => {
+  res.render('chat', { title: 'Chat' });
+})
+
 router.use("/todos", todoRouter);
 router.use("/users", userRouter);
 

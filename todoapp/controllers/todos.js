@@ -85,6 +85,21 @@ const updateTodoRESTful = async (req, res) => {
   }
 }
 
+const deleteTodoRESTful = async (req, res) => {
+  const todoId = req.params.todoId;
+  try {
+    const todoExist = await todoService.getTodoById(todoId);
+    if (!todoExist) {
+      return res.json({ success: false, data: null, error: 'Invalid todo id' });
+    }
+    await todoService.deleteTodo(todoId);
+    res.statusCode = 200;
+    return res.json({ success: true, data: todoExist, error: null });
+  } catch (error) {
+    return res.json({ success: false, data: null, error });
+  }
+}
+
 module.exports = {
   getAllTodos: getAllTodos,
   addTodoForm,
@@ -93,4 +108,5 @@ module.exports = {
   addTodoRESTful,
   getTodoByIdRESTful,
   updateTodoRESTful,
+  deleteTodoRESTful
 }
